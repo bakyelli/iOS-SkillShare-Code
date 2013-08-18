@@ -12,6 +12,7 @@
 {
     
     __weak IBOutlet UILabel *myLabel;
+    __weak IBOutlet UITextField *myTextField;
 }
 - (IBAction)buttonPressed:(id)sender;
 @end

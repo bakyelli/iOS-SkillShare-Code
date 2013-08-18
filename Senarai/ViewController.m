@@ -29,5 +29,10 @@
 }
 
 - (IBAction)buttonPressed:(id)sender {
+    // Set Label to TextField
+    [myLabel setText:[myTextField text]];
+    
+    // Clear textfield
+    [myTextField setText:@""];
 }
 @end
