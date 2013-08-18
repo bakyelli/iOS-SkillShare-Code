@@ -26,6 +26,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addButtonPressed:(id)sender
+{
+    NSLog(@"Add Button Pressed");
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

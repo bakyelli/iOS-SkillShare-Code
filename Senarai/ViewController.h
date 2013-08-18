@@ -11,4 +11,6 @@
 @interface ViewController : UITableViewController <UITableViewDataSource>
 {
 }
+
+- (void) addButtonPressed:(id) sender;
 @end
