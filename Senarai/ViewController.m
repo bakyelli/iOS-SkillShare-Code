@@ -39,18 +39,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [[[[ItemsDataStore defaultStore] fetchedResultsController] sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[[ItemsDataStore defaultStore] fetchedResultsController] sections][section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text=@"Content";
+    Item *item = [[[ItemsDataStore defaultStore] fetchedResultsController] objectAtIndexPath:indexPath];
+    cell.textLabel.text=item.content;
     return cell;
 }
 
