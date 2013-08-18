@@ -25,27 +25,45 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated
+#pragma mark - Table View
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [super viewWillAppear:animated];
-    NSLog(@"View Will Appear");
+    return 1;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super viewDidAppear:animated];
-    NSLog(@"View Did Appear");
+    return 1;
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super viewWillDisappear:animated];
-    NSLog(@"View Will Disappear");
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.textLabel.text=@"Content";
+    return cell;
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super viewDidDisappear:animated];
-    NSLog(@"View Did Disappear");
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
 }
+
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // The table view should not be re-orderable.
+    return NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"Delete Item");
+    }
+}
+
+
+
 @end
