@@ -10,6 +10,7 @@
 #import "ItemsDataStore.h"
 #import "Item.h"
 #import <CoreData/CoreData.h>
+#import "DetailViewController.h"
 
 @implementation ViewController
 
@@ -24,6 +25,7 @@
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     [[ItemsDataStore defaultStore] setTableView:self.tableView];
+    [self setDetailViewController:[[DetailViewController alloc] init]];
     
 }
 
@@ -82,5 +84,13 @@
 }
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSManagedObject *object = [[[ItemsDataStore defaultStore]fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setItem:(Item *)object];
+    }
+}
 
 @end

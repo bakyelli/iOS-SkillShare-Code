@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class DetailViewController;
 @interface ViewController : UITableViewController <UITableViewDataSource>
 {
 }
 
+
+@property (strong, nonatomic) DetailViewController *detailViewController;
 - (void) addButtonPressed:(id) sender;
+
 @end
