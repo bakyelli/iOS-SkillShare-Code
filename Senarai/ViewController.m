@@ -21,6 +21,7 @@
     [[self navigationItem] setTitle:@"Items"];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    [[ItemsDataStore defaultStore] setTableView:self.tableView];
     
 }
 
