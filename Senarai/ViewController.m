@@ -20,8 +20,6 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    [[ItemsDataStore defaultStore] setMyString:@"Hello Class!"];
-    NSLog(@"%@",[[ItemsDataStore defaultStore] myString]);
 }
 
 - (void)didReceiveMemoryWarning

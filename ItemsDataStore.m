@@ -10,7 +10,9 @@
 
 @implementation ItemsDataStore
 
-@synthesize myString=_myString;
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 + (ItemsDataStore *)defaultStore
 {
