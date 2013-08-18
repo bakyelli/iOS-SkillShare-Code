@@ -17,9 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Change Text of my label
-    [myLabel setText:@"Look it's a Label!"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,11 +25,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)buttonPressed:(id)sender {
-    // Set Label to TextField
-    [myLabel setText:[myTextField text]];
-    
-    // Clear textfield
-    [myTextField setText:@""];
-}
 @end
