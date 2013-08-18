@@ -21,6 +21,8 @@
 		D8347C9E17C08107007D99D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347C9D17C08107007D99D5 /* ViewController.m */; };
 		D8347CA617C0AB5F007D99D5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347CA517C0AB5F007D99D5 /* DetailViewController.m */; };
 		D8347CA917C0C3AE007D99D5 /* ItemsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347CA817C0C3AE007D99D5 /* ItemsDataStore.m */; };
+		D8347CAC17C0C813007D99D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8347CAA17C0C813007D99D5 /* Model.xcdatamodeld */; };
+		D8347CAF17C0D474007D99D5 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347CAE17C0D474007D99D5 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,9 @@
 		D8347CA517C0AB5F007D99D5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D8347CA717C0C3AE007D99D5 /* ItemsDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsDataStore.h; sourceTree = "<group>"; };
 		D8347CA817C0C3AE007D99D5 /* ItemsDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsDataStore.m; sourceTree = "<group>"; };
+		D8347CAB17C0C813007D99D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D8347CAD17C0D474007D99D5 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		D8347CAE17C0D474007D99D5 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				D8347CA717C0C3AE007D99D5 /* ItemsDataStore.h */,
+				D8347CAA17C0C813007D99D5 /* Model.xcdatamodeld */,
+				D8347CAD17C0D474007D99D5 /* Item.h */,
+				D8347CAE17C0D474007D99D5 /* Item.m */,
 				D8347CA817C0C3AE007D99D5 /* ItemsDataStore.m */,
 				D8347C8417C08107007D99D5 /* Senarai */,
 				D8347C7D17C08107007D99D5 /* Frameworks */,
@@ -192,6 +200,8 @@
 				D8347C9E17C08107007D99D5 /* ViewController.m in Sources */,
 				D8347CA617C0AB5F007D99D5 /* DetailViewController.m in Sources */,
 				D8347CA917C0C3AE007D99D5 /* ItemsDataStore.m in Sources */,
+				D8347CAC17C0C813007D99D5 /* Model.xcdatamodeld in Sources */,
+				D8347CAF17C0D474007D99D5 /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +337,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8347CAA17C0C813007D99D5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8347CAB17C0C813007D99D5 /* Model.xcdatamodel */,
+			);
+			currentVersion = D8347CAB17C0C813007D99D5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D8347C7317C08107007D99D5 /* Project object */;
 }
