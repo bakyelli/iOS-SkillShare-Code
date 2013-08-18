@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Main Controller Loaded");
 }
 
 - (void)didReceiveMemoryWarning

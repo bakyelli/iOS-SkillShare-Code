@@ -1,14 +1,13 @@
 //
-//  ViewController.h
+//  DetailViewController.m
 //  Senarai
 //
 //  Created by Joe Burgess on 8/18/13.
 //  Copyright (c) 2013 The Flatiron School. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 
-@interface ViewController : UITableViewController
-{
-}
+@implementation DetailViewController
+
 @end
