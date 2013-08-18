@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Item;
 @interface ItemsDataStore : NSObject <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -20,5 +21,8 @@
 @property (strong, nonatomic) UITableView *tableView;
 
 + (ItemsDataStore *)defaultStore;
+
+- (void) insertItem:(Item *)item;
+- (Item *)createItem;
 
 @end

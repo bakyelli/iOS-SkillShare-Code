@@ -33,7 +33,9 @@
 
 - (void)addButtonPressed:(id)sender
 {
-    NSLog(@"Add Button Pressed");
+    Item *newItem = [[ItemsDataStore defaultStore] createItem];
+    newItem.content=@"New Item";
+    [[ItemsDataStore defaultStore] insertItem:newItem];
 }
 
 #pragma mark - Table View

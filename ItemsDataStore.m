@@ -40,7 +40,31 @@
     return self;
 }
 
+#pragma mark - Data Store Helpers
 
+- (Item *)createItem
+{
+    Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[self managedObjectContext]];
+    newItem.completed = NO;
+    newItem.timeStamp=[NSDate timeIntervalSinceReferenceDate];
+    return newItem;
+}
+
+- (void) insertItem:(Item *)item
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    [context insertObject:item];
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+}
 #pragma mark - Core Data stack
 
 // Returns the managed object context for the application.
