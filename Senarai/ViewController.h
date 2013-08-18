@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+{
+    
+    __weak IBOutlet UILabel *myLabel;
+}
+- (IBAction)buttonPressed:(id)sender;
 @end

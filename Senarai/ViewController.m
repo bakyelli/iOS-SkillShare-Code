@@ -17,7 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    // Change Text of my label
+    [myLabel setText:@"Look it's a Label!"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,4 +28,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)buttonPressed:(id)sender {
+}
 @end
