@@ -23,6 +23,7 @@
 		D8347CA917C0C3AE007D99D5 /* ItemsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347CA817C0C3AE007D99D5 /* ItemsDataStore.m */; };
 		D8347CAC17C0C813007D99D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8347CAA17C0C813007D99D5 /* Model.xcdatamodeld */; };
 		D8347CAF17C0D474007D99D5 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347CAE17C0D474007D99D5 /* Item.m */; };
+		D8347CB117C0D66F007D99D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8347CB017C0D66F007D99D5 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		D8347CAB17C0C813007D99D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D8347CAD17C0D474007D99D5 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		D8347CAE17C0D474007D99D5 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		D8347CB017C0D66F007D99D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8347CB117C0D66F007D99D5 /* CoreData.framework in Frameworks */,
 				D8347C7F17C08107007D99D5 /* UIKit.framework in Frameworks */,
 				D8347C8117C08107007D99D5 /* Foundation.framework in Frameworks */,
 				D8347C8317C08107007D99D5 /* CoreGraphics.framework in Frameworks */,
@@ -69,10 +72,10 @@
 		D8347C7217C08107007D99D5 = {
 			isa = PBXGroup;
 			children = (
-				D8347CA717C0C3AE007D99D5 /* ItemsDataStore.h */,
 				D8347CAA17C0C813007D99D5 /* Model.xcdatamodeld */,
 				D8347CAD17C0D474007D99D5 /* Item.h */,
 				D8347CAE17C0D474007D99D5 /* Item.m */,
+				D8347CA717C0C3AE007D99D5 /* ItemsDataStore.h */,
 				D8347CA817C0C3AE007D99D5 /* ItemsDataStore.m */,
 				D8347C8417C08107007D99D5 /* Senarai */,
 				D8347C7D17C08107007D99D5 /* Frameworks */,
@@ -91,6 +94,7 @@
 		D8347C7D17C08107007D99D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8347CB017C0D66F007D99D5 /* CoreData.framework */,
 				D8347C7E17C08107007D99D5 /* UIKit.framework */,
 				D8347C8017C08107007D99D5 /* Foundation.framework */,
 				D8347C8217C08107007D99D5 /* CoreGraphics.framework */,
