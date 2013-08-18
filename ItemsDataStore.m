@@ -8,6 +8,7 @@
 
 #import <CoreData/CoreData.h>
 #import "ItemsDataStore.h"
+#import "Item.h"
 
 @implementation ItemsDataStore
 
@@ -33,6 +34,18 @@
 {
     self = [super init];
     if(self) {
+        NSManagedObjectContext *context = [self managedObjectContext];
+        Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:context];
+        newItem.content=@"My Content";
+        [context insertObject:newItem];
+        // Save the context.
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
     }
     return self;
 }
