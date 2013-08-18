@@ -10,6 +10,8 @@
 
 @implementation ItemsDataStore
 
+@synthesize myString=_myString;
+
 + (ItemsDataStore *)defaultStore
 {
     static ItemsDataStore *defaultStore = nil;
@@ -27,8 +29,6 @@
 - (id)init
 {
     self = [super init];
-    
-    
     if(self) {
     }
     return self;

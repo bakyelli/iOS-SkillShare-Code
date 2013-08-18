@@ -12,4 +12,5 @@
 
 + (ItemsDataStore *)defaultStore;
 
+@property NSString *myString;
 @end
