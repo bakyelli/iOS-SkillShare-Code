@@ -20,6 +20,7 @@
 		D8347C9B17C08107007D99D5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8347C9917C08107007D99D5 /* MainStoryboard_iPad.storyboard */; };
 		D8347C9E17C08107007D99D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347C9D17C08107007D99D5 /* ViewController.m */; };
 		D8347CA617C0AB5F007D99D5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347CA517C0AB5F007D99D5 /* DetailViewController.m */; };
+		D8347CA917C0C3AE007D99D5 /* ItemsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8347CA817C0C3AE007D99D5 /* ItemsDataStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		D8347C9D17C08107007D99D5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D8347CA417C0AB5F007D99D5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D8347CA517C0AB5F007D99D5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D8347CA717C0C3AE007D99D5 /* ItemsDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsDataStore.h; sourceTree = "<group>"; };
+		D8347CA817C0C3AE007D99D5 /* ItemsDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsDataStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 		D8347C7217C08107007D99D5 = {
 			isa = PBXGroup;
 			children = (
+				D8347CA717C0C3AE007D99D5 /* ItemsDataStore.h */,
+				D8347CA817C0C3AE007D99D5 /* ItemsDataStore.m */,
 				D8347C8417C08107007D99D5 /* Senarai */,
 				D8347C7D17C08107007D99D5 /* Frameworks */,
 				D8347C7C17C08107007D99D5 /* Products */,
@@ -186,6 +191,7 @@
 				D8347C8F17C08107007D99D5 /* AppDelegate.m in Sources */,
 				D8347C9E17C08107007D99D5 /* ViewController.m in Sources */,
 				D8347CA617C0AB5F007D99D5 /* DetailViewController.m in Sources */,
+				D8347CA917C0C3AE007D99D5 /* ItemsDataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
