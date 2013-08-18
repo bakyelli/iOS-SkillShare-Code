@@ -24,5 +24,6 @@
 
 - (void) insertItem:(Item *)item;
 - (Item *)createItem;
+- (BOOL) deleteItem:(NSIndexPath *)indexPath;
 
 @end

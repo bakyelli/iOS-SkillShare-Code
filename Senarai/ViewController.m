@@ -21,6 +21,8 @@
     [[self navigationItem] setTitle:@"Items"];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     [[ItemsDataStore defaultStore] setTableView:self.tableView];
     
 }
@@ -75,7 +77,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSLog(@"Delete Item");
+        [[ItemsDataStore defaultStore] deleteItem:indexPath];
     }
 }
 
