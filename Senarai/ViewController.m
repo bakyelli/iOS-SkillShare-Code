@@ -37,6 +37,40 @@
 
 - (void)addButtonPressed:(id)sender
 {
+    // Make Text Field
+    CGRect textFieldFrame = CGRectMake(5.0, 7.0, 230.0, 30.0f);
+    UITextField *insertTextField = [[UITextField alloc] initWithFrame:textFieldFrame];
+    
+    // Format Text Field
+    insertTextField.placeholder = @"Enter Text!";
+    insertTextField.backgroundColor = [UIColor whiteColor];
+    insertTextField.textColor = [UIColor blackColor];
+    insertTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    insertTextField.borderStyle = UITextBorderStyleRoundedRect;
+    insertTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    insertTextField.returnKeyType = UIReturnKeyDone;
+
+    // Make Cancel Button
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(243, 8.0, 70, 30); // initialize the button outside the window
+    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    
+   
+    // Adding Background Image
+    UIImage* buttonImage =[[UIImage imageNamed:@"CancelButton.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+    UIImage* buttonImagePressed =[[UIImage imageNamed:@"CancelButtonPressed.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+    [cancelButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [cancelButton setBackgroundImage:buttonImagePressed forState:UIControlStateHighlighted];
+    
+    // Add Cancel Button
+    self.navigationItem.leftBarButtonItem = nil;
+    [self.navigationController.navigationBar addSubview: cancelButton];
+   
+    // Add Insert Text Field
+    self.navigationItem.rightBarButtonItem = nil;
+    [self.navigationItem.titleView setHidden:YES];
+    [self.navigationController.navigationBar addSubview:insertTextField];
+    
     Item *newItem = [[ItemsDataStore defaultStore] createItem];
     newItem.content=@"New Item";
     [[ItemsDataStore defaultStore] insertItem:newItem];
