@@ -30,6 +30,8 @@
 
 - (IBAction)markCompleted:(id)sender {
     self.item.completed=!self.item.completed;
+    [[ItemsDataStore defaultStore] save];
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 @end
