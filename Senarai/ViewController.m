@@ -59,7 +59,16 @@
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     Item *item = [[[ItemsDataStore defaultStore] fetchedResultsController] objectAtIndexPath:indexPath];
-    cell.textLabel.text=item.content;
+    NSDictionary* attributes = @{
+                                 NSStrikethroughStyleAttributeName: [NSNumber numberWithInt:NSUnderlineStyleSingle]
+                                 };
+    NSAttributedString *attrText;
+    if(item.completed){
+        attrText = [[NSAttributedString alloc] initWithString:[item valueForKey:@"content"] attributes:attributes];
+    } else {
+        attrText = [[NSAttributedString alloc] initWithString:[item valueForKey:@"content"] attributes:nil];
+    }
+    cell.textLabel.attributedText=attrText;
     return cell;
 }
 
