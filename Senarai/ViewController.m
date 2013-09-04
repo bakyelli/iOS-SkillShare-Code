@@ -34,12 +34,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)cancelButtonPressed: (id)sender
+{
+    NSLog(@"Pressed Cancel Button!");
+}
 
 - (void)addButtonPressed:(id)sender
 {
     // Make Text Field
     CGRect textFieldFrame = CGRectMake(-235.0, 7.0, 230.0, 30.0f);
-    UITextField *insertTextField = [[UITextField alloc] initWithFrame:textFieldFrame];
     
     // Format Text Field
     insertTextField.placeholder = @"Enter Text!";
@@ -54,6 +57,9 @@
     cancelButton.frame = CGRectMake(330, 8.0, 70, 30); // initialize the button outside the window
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    
+    // Do Something on Tap
+    [cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
    
     // Adding Background Image

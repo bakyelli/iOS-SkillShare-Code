@@ -16,5 +16,5 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 - (void) addButtonPressed:(id) sender;
-
+- (void) cancelButtonPressed:(id) sender;
 @end
