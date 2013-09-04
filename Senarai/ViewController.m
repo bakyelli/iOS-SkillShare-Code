@@ -29,6 +29,16 @@
     
 }
 
+- (void)insertNewObject:(NSString *)content
+{
+
+    Item *newItem = [[ItemsDataStore defaultStore] createItem];
+    newItem.content=content;
+    [[ItemsDataStore defaultStore] insertItem:newItem];
+    
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -65,6 +75,7 @@
     insertTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     insertTextField.borderStyle = UITextBorderStyleRoundedRect;
     insertTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    insertTextField.delegate=self;
     insertTextField.returnKeyType = UIReturnKeyDone;
 
     // Make Cancel Button
@@ -91,17 +102,15 @@
     [self.navigationItem.titleView setHidden:YES];
     [self.navigationController.navigationBar addSubview:insertTextField];
     
-    // Bring up keyboard
-    [insertTextField becomeFirstResponder];
     
     [UIView animateWithDuration:0.25 animations:^{
         cancelButton.frame = CGRectMake(243, 8.0, 70, 30);  // here is the position button will slide into window with animation
         insertTextField.frame = CGRectMake(5.0, 7.0, 230.0, 30.0f);
     }];
     
-    Item *newItem = [[ItemsDataStore defaultStore] createItem];
-    newItem.content=@"New Item";
-    [[ItemsDataStore defaultStore] insertItem:newItem];
+    // Bring up keyboard
+    [insertTextField becomeFirstResponder];
+    
 }
 
 #pragma mark - Table View
@@ -162,6 +171,35 @@
         NSManagedObject *object = [[[ItemsDataStore defaultStore]fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setItem:(Item *)object];
     }
+}
+
+
+#pragma mark - UITextFieldDelegate Methods
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    
+    // Remove TextField and Cancel Button
+    [insertTextField removeFromSuperview];
+    [cancelButton removeFromSuperview];
+    
+    
+    // Add Edit, Add and unhide Title
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                               target:self
+                                                                               action:@selector(addButtonPressed:)];
+    [self.navigationItem setRightBarButtonItem:addButton animated:YES];
+    [self.navigationItem.titleView setHidden:NO];
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    [self insertNewObject:insertTextField.text];
+    [textField endEditing:YES];
+    return YES;
 }
 
 @end

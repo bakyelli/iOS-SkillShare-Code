@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class DetailViewController;
-@interface ViewController : UITableViewController <UITableViewDataSource>
+@interface ViewController : UITableViewController <UITableViewDataSource, UITextFieldDelegate>
 {
     UIButton *cancelButton;
     UITextField *insertTextField;
@@ -17,6 +17,9 @@
 
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
+
+
+- (void)insertNewObject:(NSString *)content;
 - (void) addButtonPressed:(id) sender;
 - (void) cancelButtonPressed:(id) sender;
 @end
