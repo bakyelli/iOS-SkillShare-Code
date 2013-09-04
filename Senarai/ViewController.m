@@ -37,7 +37,18 @@
 
 - (void)cancelButtonPressed: (id)sender
 {
-    NSLog(@"Pressed Cancel Button!");
+    // Remove TextField and Cancel Button
+    [insertTextField removeFromSuperview];
+    [cancelButton removeFromSuperview];
+    
+    // Add Edit, Add and unhide Title
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                               target:self
+                                                                               action:@selector(addButtonPressed:)];
+    [self.navigationItem setRightBarButtonItem:addButton animated:YES];
+    [self.navigationItem.titleView setHidden:NO];
+    
 }
 
 - (void)addButtonPressed:(id)sender
