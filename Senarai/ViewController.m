@@ -38,7 +38,7 @@
 - (void)addButtonPressed:(id)sender
 {
     // Make Text Field
-    CGRect textFieldFrame = CGRectMake(5.0, 7.0, 230.0, 30.0f);
+    CGRect textFieldFrame = CGRectMake(-235.0, 7.0, 230.0, 30.0f);
     UITextField *insertTextField = [[UITextField alloc] initWithFrame:textFieldFrame];
     
     // Format Text Field
@@ -51,8 +51,8 @@
     insertTextField.returnKeyType = UIReturnKeyDone;
 
     // Make Cancel Button
+    cancelButton.frame = CGRectMake(330, 8.0, 70, 30); // initialize the button outside the window
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cancelButton.frame = CGRectMake(243, 8.0, 70, 30); // initialize the button outside the window
     [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
     
    
@@ -70,6 +70,14 @@
     self.navigationItem.rightBarButtonItem = nil;
     [self.navigationItem.titleView setHidden:YES];
     [self.navigationController.navigationBar addSubview:insertTextField];
+    
+    // Bring up keyboard
+    [insertTextField becomeFirstResponder];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        cancelButton.frame = CGRectMake(243, 8.0, 70, 30);  // here is the position button will slide into window with animation
+        insertTextField.frame = CGRectMake(5.0, 7.0, 230.0, 30.0f);
+    }];
     
     Item *newItem = [[ItemsDataStore defaultStore] createItem];
     newItem.content=@"New Item";
