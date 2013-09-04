@@ -11,6 +11,8 @@
 @class DetailViewController;
 @interface ViewController : UITableViewController <UITableViewDataSource>
 {
+    UIButton *cancelButton;
+    UITextField *insertTextField;
 }
 
 
