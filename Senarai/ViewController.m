@@ -47,17 +47,7 @@
 
 - (void)cancelButtonPressed: (id)sender
 {
-    // Remove TextField and Cancel Button
-    [insertTextField removeFromSuperview];
-    [cancelButton removeFromSuperview];
-    
-    // Add Edit, Add and unhide Title
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                               target:self
-                                                                               action:@selector(addButtonPressed:)];
-    [self.navigationItem setRightBarButtonItem:addButton animated:YES];
-    [self.navigationItem.titleView setHidden:NO];
+    [insertTextField endEditing:YES];
     
 }
 
@@ -179,9 +169,15 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     
-    // Remove TextField and Cancel Button
-    [insertTextField removeFromSuperview];
-    [cancelButton removeFromSuperview];
+    [UIView animateWithDuration:0.25 animations:^{
+        cancelButton.frame = CGRectMake(330, 8.0, 70, 30);  // here is the position button will slide into window with animation
+        textField.frame = CGRectMake(-235.0, 7.0, 230.0, 30.0f);
+        
+    
+    } completion:^(BOOL finished){
+        [textField removeFromSuperview];
+        [cancelButton removeFromSuperview];
+    }];
     
     
     // Add Edit, Add and unhide Title
